@@ -35,7 +35,9 @@ def parse_udp_header(data):
 def main():
     sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
     sniffer.bind((socket.gethostbyname(socket.gethostname()), 0))  
+    
     sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+
     sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)
 
     try:
