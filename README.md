@@ -10,5 +10,11 @@ This tool shows TCP and UDP packets including IP information and TCP flags.
 
 
 ## Usage
-``` bash
+
+```bash
+# Show all TCP and UDP packets
 python main.py
+
+# Filter packets by a specific port
+python main.py --port PORT_NUMBER
+
