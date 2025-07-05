@@ -1,11 +1,14 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
-
 *.egg-info/
 dist/
 build/
-
 venv/
 env/
 
+# Node / React
+node_modules/
+.env
+.DS_Store
