@@ -68,7 +68,8 @@ def sniff_packets(stop_evt: threading.Event):
                     "src_port": packet.src_port,
                     "dest_ip": packet.dest_ip,
                     "dest_port": packet.dest_port,
-                    "payload": payload_str[:200]  # Truncate long payloads for performance
+                    "payload": payload_str[:200],  # Truncate long payloads for performance
+                    "timestamp": packet.timestamp    
                 }
 
                 # Add parsed packet data to the queue

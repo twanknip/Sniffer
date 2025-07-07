@@ -4,6 +4,7 @@ export default function PacketTable({ packets }) {
       <table>
         <thead>
           <tr>
+            <th>Time</th>    
             <th>Protocol</th>
             <th>Source</th>
             <th>Destination</th>
@@ -13,6 +14,7 @@ export default function PacketTable({ packets }) {
         <tbody>
           {packets.map((p, i) => (
             <tr key={i}>
+              <td>{new Date(p.timestamp * 1000).toLocaleString()}</td>
               <td>{p.protocol}</td>
               <td>{p.src_ip}:{p.src_port}</td>
               <td>{p.dest_ip}:{p.dest_port}</td>

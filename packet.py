@@ -1,9 +1,9 @@
-import socket
-import struct
+import socket, struct, time
 
 # Class packet, When making the parsing i get IP-header, TCP/UDP header + payload.
 class Packet:
     def __init__(self, raw_data):
+        self.timestamp = time.time()
         self.raw_data = raw_data
         self.protocol, self.ip_header_len, self.src_ip, self.dest_ip = self.parse_ip_header()
         self.payload = None
